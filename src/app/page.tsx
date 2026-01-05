@@ -1,9 +1,8 @@
-import { Container } from "./_component/Container";
+import { Container } from "./_features/Container";
 
 export default function Home() {
   return (
     <div className="bg-white">
-      <hr className="gray-100"></hr>
       <Container />
     </div>
   );
