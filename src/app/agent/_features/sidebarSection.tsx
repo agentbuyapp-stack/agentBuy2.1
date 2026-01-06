@@ -1,13 +1,11 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { SideBarAgent } from "../_components/sideBar";
+import { SideBarAgent } from "../_components/sideBarAgent";
 
 export const SideBarSection = () => {
   return (
-    <div className="w-fit h-fit">
-      <SidebarProvider>
-        <SidebarTrigger />
-        <SideBarAgent />
-      </SidebarProvider>
-    </div>
+    <SidebarProvider>
+      <SidebarTrigger />
+      <SideBarAgent />
+    </SidebarProvider>
   );
 };
