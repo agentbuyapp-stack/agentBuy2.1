@@ -1,0 +1,119 @@
+"use client";
+
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar";
+import {
+  Award,
+  Clipboard,
+  ClipboardList,
+  LogOut,
+  PackageCheck,
+  PackageX,
+} from "lucide-react";
+
+const menuItemsSubscription = [
+  {
+    title: "Нээлттэй захиалга",
+    icon: Clipboard,
+    url: "/agent/preOrder",
+  },
+  {
+    title: "Судалж буй захиалга",
+    icon: ClipboardList,
+    url: "/agent/pendingOrder",
+  },
+  {
+    title: "Амжилттай захиалга",
+    icon: PackageCheck,
+    url: "/agent/completedOrder",
+  },
+  {
+    title: "Цуцлагдсан захиалга",
+    icon: PackageX,
+    url: "/agent/cancelledOrder",
+  },
+];
+
+const menuItemsAwardAndOthers = [
+  {
+    title: "Урамшуулал",
+    icon: Award,
+    url: "/agent/reward",
+  },
+  {
+    title: "Гарах",
+    icon: LogOut,
+    url: "/",
+  },
+];
+
+export function SideBarAgent() {
+  return (
+    <Sidebar className="[--sidebar:theme(colors.white)] top-16">
+      {/* <SidebarHeader>
+        <div className="flex items-center gap-2 px-2 py-1">
+          <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+            <span className="text-lg font-bold">A</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-semibold">Agent Buy</span>
+            <span className="text-xs text-muted-foreground">
+              Agent Dashboard
+            </span>
+          </div>
+        </div>
+      </SidebarHeader> */}
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Захиалга</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {menuItemsSubscription.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Урамшуулал ба бусад</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {menuItemsAwardAndOthers.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+      <SidebarFooter>
+        <div className="px-2 py-1 text-xs text-muted-foreground">
+          © 2026 Agent Buy
+        </div>
+      </SidebarFooter>
+    </Sidebar>
+  );
+}

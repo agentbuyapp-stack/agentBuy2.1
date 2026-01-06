@@ -1,12 +1,11 @@
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { SideBarUser } from "@/app/user/_component/SideBarUser";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SideBarAgent } from "../_components/sideBarAgent";
 
 export const SideBarSection = () => {
   return (
-    <div>
-      <SidebarProvider>
-        <SideBarUser />
-      </SidebarProvider>
-    </div>
+    <SidebarProvider>
+      <SidebarTrigger />
+      <SideBarAgent />
+    </SidebarProvider>
   );
 };
