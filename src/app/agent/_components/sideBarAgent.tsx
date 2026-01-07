@@ -11,6 +11,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
   Award,
@@ -59,8 +60,8 @@ const menuItemsAwardAndOthers = [
 
 export function SideBarAgent() {
   return (
-    <Sidebar className="[--sidebar:theme(colors.white)] top-16">
-      {/* <SidebarHeader>
+    <Sidebar className="[--sidebar:theme(colors.white)]">
+      <SidebarHeader>
         <div className="flex items-center gap-2 px-2 py-1">
           <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <span className="text-lg font-bold">A</span>
@@ -72,7 +73,7 @@ export function SideBarAgent() {
             </span>
           </div>
         </div>
-      </SidebarHeader> */}
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Захиалга</SidebarGroupLabel>
