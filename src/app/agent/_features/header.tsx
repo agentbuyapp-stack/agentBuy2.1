@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import { User2Icon } from "lucide-react";
 
 export const Header = () => {
@@ -16,7 +17,8 @@ export const Header = () => {
           </div>
         </div>
         <button>
-          <User2Icon color="black" />
+          <UserButton />
+          {/* <User2Icon color="black" /> */}
         </button>
       </div>
     </header>
