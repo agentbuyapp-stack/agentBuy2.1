@@ -13,22 +13,22 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { Home, Settings, Users, FileText, BarChart } from "lucide-react";
+import { FolderClosed, FolderPlus, PanelLeftClose } from "lucide-react";
 
 const menuItems = [
   {
-    title: "Home",
-    icon: Home,
+    title: "Шинэ захиалга",
+    icon: FolderPlus,
     url: "/user",
   },
   {
-    title: "Orders",
-    icon: BarChart,
-    url: "/Orders",
+    title: "Үүсгэсэн захиалгууд",
+    icon: FolderClosed,
+    url: "/user/orders",
   },
   {
     title: "Гарах",
-    icon: Settings,
+    icon: PanelLeftClose,
     url: "/",
   },
 ];
