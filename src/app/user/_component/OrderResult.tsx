@@ -20,7 +20,7 @@ export const OrderResult = (props: Click) => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-1">
-                    <p className="text-lg font-bold text-gray-800">Захиалга #1</p>
+                    <p className="text-lg font-bold text-gray-800">Захиалга #1 (baraanii ner)</p>
                     <div className="flex items-center gap-3 text-xs text-gray-500">
                         <div className="flex items-center gap-1">
                             <Calendar size={12} />
