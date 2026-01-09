@@ -1,5 +1,5 @@
 "use client";
-import { Image, Pencil, Plus, Trash, Trash2, X } from "lucide-react";
+import { Image, X } from "lucide-react";
 import { button } from "motion/react-client";
 import { useState } from "react";
 import { OrderResult } from "./_component/OrderResult";
@@ -52,7 +52,7 @@ export default function Page() {
   }
   return (
     <div className="w-full h-screen flex justify-center pt-20 bg-gray-50">
-      <div className="w-235 h-fit bg-white rounded-xl border shadow-amber-100 flex flex-col justify-center items-center px-4 gap-6">
+      <div className="w-235 h-fit bg-white rounded-xl border shadow-amber-100 flex flex-col justify-center items-center px-4 gap-6 pt-6">
         <NewOrderBtn handleAddNewOrder={handleAddNewOrder} />
         <OrderResult handleEditOrder={handleEditOrder} handleDeleteOrder={handleDeleteOrder} />
         <button className="h-13 w-225 flex bg-linear-to-r from-[#0b4ce5] to-[#4a90e2] mb-5 rounded-xl text-white flex justify-center items-center cursor-pointer transition-transform duration-200 ease-out hover:scale-102 active:scale-95" onClick={handleSuccesOrder}>
