@@ -13,6 +13,7 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { SignOutButton } from "@clerk/nextjs";
 import {
   Award,
   Clipboard,
@@ -99,10 +100,22 @@ export function SideBarAgent() {
               {menuItemsAwardAndOthers.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
+                    {item.title === "Гарах" ? (
+                      <SignOutButton redirectUrl="/">
+                        <button className="flex items-center gap-2 w-full text-left px-2 py-1">
+                          <item.icon />
+                          <span>{item.title}</span>
+                        </button>
+                      </SignOutButton>
+                    ) : (
+                      <a
+                        href={item.url}
+                        className="flex items-center gap-2 px-2 py-1"
+                      >
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </a>
+                    )}
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
