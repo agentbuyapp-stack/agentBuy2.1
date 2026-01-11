@@ -2,7 +2,7 @@ export const HomePageHeroText = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-3 sm:gap-4">
       <p
-        className="text-transparent bg-clip-text bg-linear-to-r from-[#0b4ce5] via-[#4a90e2] to-[#00d4ff] font-black text-[56px] sm:text-[88px] md:text-[110px] lg:text-[140px] tracking-tight text-center leading-none"
+        className="w-[650px] h-[150px] text-transparent bg-clip-text bg-linear-to-r from-[#0b4ce5] via-[#4a90e2] to-[#00d4ff] font-black text-[56px] sm:text-[88px] md:text-[110px] lg:text-[140px] tracking-tight text-center leading-none"
         style={{
           backgroundSize: "200% 200%",
           animation: "gradient-shift 3s ease infinite",

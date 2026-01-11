@@ -61,7 +61,7 @@ const menuItemsAwardAndOthers = [
 export function SideBarAgent() {
   return (
     <Sidebar className="[--sidebar:theme(colors.white)]">
-      <SidebarHeader>
+      <SidebarHeader className="hidden max-md:block">
         <div className="flex items-center gap-2 px-2 py-1">
           <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <span className="text-lg font-bold">A</span>

@@ -1,6 +1,6 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { SideBarAgent } from "./_components/sideBarAgent";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { Header } from "./_features/header";
+import { SideBarAgent } from "./_components/sideBarAgent";
 
 export const metadata = {
   title: "Agent Dashboard",
@@ -13,11 +13,10 @@ export default function AgentLayout({
 }) {
   return (
     <SidebarProvider>
-      <div className="flex flex-col w-full min-h-screen">
+      <div className="flex flex-col w-full h-screen">
         <Header />
-        <div className="flex flex-row min-w-full h-full">
+        <div className="flex flex-1 overflow-hidden">
           <SideBarAgent />
-          <SidebarTrigger className="hidden max-md:block" />
           <main className="flex-1">{children}</main>
         </div>
       </div>
