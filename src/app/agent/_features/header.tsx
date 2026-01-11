@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 import { User2Icon } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -13,10 +14,11 @@ export const Header = () => {
           <span className="text-sm font-semibold">Agent Buy</span>
           <span className="text-xs text-muted-foreground">Agent Dashboard</span>
         </div>
+        <button>
+          <UserButton />
+          {/* <User2Icon color="black" /> */}
+        </button>
       </div>
-      <button>
-        <User2Icon color="black" />
-      </button>
     </header>
   );
 };
