@@ -11,7 +11,9 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { SignOutButton } from "@clerk/nextjs";
 import {
   Award,
   Clipboard,
@@ -59,8 +61,8 @@ const menuItemsAwardAndOthers = [
 
 export function SideBarAgent() {
   return (
-    <Sidebar className="[--sidebar:theme(colors.white)] top-16">
-      {/* <SidebarHeader>
+    <Sidebar className="[--sidebar:theme(colors.white)]">
+      <SidebarHeader className="hidden max-md:block">
         <div className="flex items-center gap-2 px-2 py-1">
           <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <span className="text-lg font-bold">A</span>
@@ -72,7 +74,7 @@ export function SideBarAgent() {
             </span>
           </div>
         </div>
-      </SidebarHeader> */}
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Захиалга</SidebarGroupLabel>
@@ -98,10 +100,22 @@ export function SideBarAgent() {
               {menuItemsAwardAndOthers.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
+                    {item.title === "Гарах" ? (
+                      <SignOutButton redirectUrl="/">
+                        <button className="flex items-center gap-2 w-full text-left px-2 py-1">
+                          <item.icon />
+                          <span>{item.title}</span>
+                        </button>
+                      </SignOutButton>
+                    ) : (
+                      <a
+                        href={item.url}
+                        className="flex items-center gap-2 px-2 py-1"
+                      >
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </a>
+                    )}
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
