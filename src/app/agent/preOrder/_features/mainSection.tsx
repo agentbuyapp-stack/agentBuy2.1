@@ -2,8 +2,20 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "../_components/cards";
 import { useRouter } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
+import { useEffect } from "react";
 
 export const MainSection = () => {
+  const { user, isLoaded } = useUser();
+  console.log(isLoaded, "is loaded");
+
+  useEffect(() => {
+    if (!user || !isLoaded) return;
+    if (isLoaded === true) {
+      console.log("unsafe:", user.unsafeMetadata);
+    }
+  }, [user, isLoaded]);
+
   const router = useRouter();
   return (
     <div className="w-full h-full p-6">
