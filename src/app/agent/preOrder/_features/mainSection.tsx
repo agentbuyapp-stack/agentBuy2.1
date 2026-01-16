@@ -3,11 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "../_components/cards";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 export const MainSection = () => {
   const router = useRouter();
   const { user } = useUser();
   console.log("USER DATA:", user);
+  const pathName = usePathname();
+  const segments = pathName.split("/").filter(Boolean);
+  const role = segments[0];
+  console.log("ROLE:", segments);
 
   return (
     <div className="w-full h-full p-6">
