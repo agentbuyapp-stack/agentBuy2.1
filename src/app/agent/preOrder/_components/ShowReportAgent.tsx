@@ -1,9 +1,11 @@
-import { ShoppingBag, X } from "lucide-react";
-type ShowDetailsClick = {
-    showDetialsClick: () => void;
-};
-export const ShowDetails = (props: ShowDetailsClick) => {
-    const { showDetialsClick } = props;
+import { ShoppingBag, X } from "lucide-react"
+type ShowReportAgent = {
+    handleFalseReportClick: () => void;
+    handleOrderMore: () => void;
+    handlePriceInf: () => void;
+}
+export const ShowReportAgent = (props: ShowReportAgent) => {
+    const { handleFalseReportClick, handleOrderMore, handlePriceInf } = props;
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md p-4">
             <div className="w-162.5 max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
@@ -19,7 +21,7 @@ export const ShowDetails = (props: ShowDetailsClick) => {
                     </div>
                     <button
                         className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-all"
-                        onClick={showDetialsClick}
+                        onClick={handleFalseReportClick}
                     >
                         <X className="text-white" size={20} />
                     </button>
@@ -36,8 +38,13 @@ export const ShowDetails = (props: ShowDetailsClick) => {
                                         iPhone 15 Pro Max
                                     </h4>
                                 </div>
-                                <div className="px-2 py-1 bg-blue-100 text-blue-700 font-bold rounded text-xs shrink-0">
-                                    2x
+                                <div className="flex flex-col gap-2">
+                                    <button className="px-2 py-1 bg-blue-100 text-blue-700 font-bold rounded text-xs shrink-0 cursor-pointer" onClick={handleOrderMore}>
+                                        Дэлгэрэнгүй харах
+                                    </button>
+                                    <button className="px-2 py-1 bg-blue-100 text-blue-700 font-bold rounded text-xs shrink-0 cursor-pointer" onClick={handlePriceInf}>
+                                        Мэдээлэл оруулах
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -46,12 +53,12 @@ export const ShowDetails = (props: ShowDetailsClick) => {
                 <div className="p-4 bg-gray-50 border-t border-gray-200">
                     <button
                         className="w-full py-2.5 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all hover:scale-103 shadow-md text-sm"
-                        onClick={showDetialsClick}
+                        onClick={handleFalseReportClick}
                     >
-                        Хаах
+                        Тайлан илгээх
                     </button>
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
