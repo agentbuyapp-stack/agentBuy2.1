@@ -6,32 +6,9 @@ import { useRouter } from "next/navigation";
 export const MainSection = () => {
   const router = useRouter();
   return (
-    <div className="w-full h-full p-6">
-      <header className="flex flex-col">
-        <p className="text-2xl font-bold tracking-tight">Neelttei zahialguud</p>
-        <div className="flex flex-row">
-          <Button
-            variant={"ghost"}
-            onClick={() => router.push("/agent/preOrder/singleOrder")}
-          >
-            Dan zahialguud
-          </Button>
-          <Button
-            variant={"ghost"}
-            onClick={() => router.push("/agent/preOrder/packageOrder")}
-          >
-            Bagts zahialguud
-          </Button>
-        </div>
-      </header>
-      <div className="flex flex-wrap justify-evenly gap-y-7">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+    <div className="w-full h-full flex flex-col gap-5 p-6">
+      <p className="text-2xl font-bold tracking-tight">Нээлттэй захиалгууд</p>
+      <div className="grid grid-cols-4 gap-y-7">
         <Card />
       </div>
     </div>

@@ -1,18 +1,95 @@
+"use client";
+import { ShowDetails } from "@/app/user/_component/ShowDetails";
+import { FileText, MessageCircle, ShoppingBag, X } from "lucide-react";
+import { useState } from "react";
 export const Card = () => {
+  const [sendReport, setSendReport] = useState(false);
+  const handleSendReport = () => {
+    setSendReport(!sendReport);
+  };
+  const handleFalseReportClick = () => {
+    setSendReport(false);
+  };
   return (
-    <div className="border border-zinc-200 w-[350px] h-[390px] rounded-lg flex flex-col p-4 ">
-      <div>
-        <div className="flex border-b border-dashed w-fit pb-2 h-fit gap-2">
-          <img
-            className="w-9 h-9 rounded-xl object-cover"
-            src={"/alipay.png"}
-          />
-          <div className="flex flex-col">
-            <p className="text-[12px]">Username</p>
-            <p className="text-[12px]">Some random</p>
-          </div>
+    <div className="border border-zinc-200 shadow-xl w-95 h-37.5 rounded-lg flex flex-col p-4 ">
+      <div className="flex w-fit gap-2">
+        <img className="w-9 h-9 rounded-xl object-cover" src={"/alipay.png"} />
+        <div className="flex flex-col">
+          <p className="text-[12px]">Username</p>
+          <p className="text-[12px]">Some random</p>
         </div>
       </div>
+      <div className="grid grid-cols-2 gap-2 mt-auto">
+        <button className="py-2 rounded-md text-xs font-semibold flex bg-purple-50 text-purple-600 hover:bg-purple-100 hover:scale-105 justify-center items-center cursor-pointer gap-1">
+          <MessageCircle size={14} />
+          <span>Чат</span>
+        </button>
+        <button
+          className="py-2 rounded-md text-xs font-semibold flex flex-col bg-green-50 text-green-600 hover:bg-green-100 hover:scale-105 justify-center items-center cursor-pointer"
+          onClick={handleSendReport}
+        >
+          <FileText size={14} />
+          <span>Тайлан илгээх</span>
+        </button>
+      </div>
+      {sendReport && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md p-4">
+          <div className="w-162.5 max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
+            <div className="bg-linear-to-r from-blue-500 to-blue-600 p-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                  <ShoppingBag className="w-5 h-5 text-white" />
+                </div>
+                <div className="text-white">
+                  <h2 className="text-lg font-bold">Захиалгын дэлгэрэнгүй</h2>
+                  <p className="text-xs text-white/90">Нийт 5 бараа</p>
+                </div>
+              </div>
+              <button
+                className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-all"
+                onClick={handleFalseReportClick}
+              >
+                <X className="text-white" size={20} />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-4">
+              <div className="space-y-2">
+                <div className="bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-300 hover:shadow-md transition-all">
+                  <div className="flex gap-3 items-center">
+                    <div className="w-8 h-8 bg-linear-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shrink-0">
+                      <span className="text-sm font-bold text-white">1</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-sm font-bold text-gray-800 truncate">
+                        iPhone 15 Pro Max
+                      </h4>
+                      <p className="text-xs text-gray-500 truncate">
+                        Хар өнгө, 256GB
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="px-2 py-1 bg-blue-100 text-blue-700 font-bold rounded text-xs shrink-0">
+                        Дэлгэрэнгүй харах
+                      </div>
+                      <div className="px-2 py-1 bg-blue-100 text-blue-700 font-bold rounded text-xs shrink-0">
+                        Үнийн мэдээлэл
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="p-4 bg-gray-50 border-t border-gray-200">
+              <button
+                className="w-full py-2.5 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-semibold transition-all hover:scale-103 shadow-md text-sm"
+                onClick={handleFalseReportClick}
+              >
+                Тайлан илгээх
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
