@@ -5,23 +5,10 @@ import {
   Clock,
   CheckCircle2,
   Eye,
-  MoreVertical,
   MessageCircle,
   FileText,
-  ShoppingBag,
 } from "lucide-react";
 import { useState } from "react";
-import {
-  X,
-  Calendar,
-  CreditCard,
-  Building2,
-  Copy,
-  CheckCheck,
-  AlertCircle,
-  Download,
-  Printer,
-} from "lucide-react";
 import { ShowReport } from "./ShowReport";
 import { ShowDetails } from "./ShowDetails";
 export const OrdersCard = () => {
@@ -38,7 +25,7 @@ export const OrdersCard = () => {
       <div className="w-110 h-50 bg-white shadow-lg hover:shadow-xl rounded-xl transition-all duration-300 p-4 flex flex-col gap-3 border border-gray-100">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex flex-col items-center justify-center shadow-md">
+            <div className="w-11 h-11 bg-linear-to-br from-blue-500 to-blue-600 rounded-lg flex flex-col items-center justify-center shadow-md">
               <Package className="w-4 h-4 text-white mb-0.5" />
               <span className="text-white font-bold text-xs">#3</span>
             </div>
@@ -106,7 +93,7 @@ export const OrdersCard = () => {
       <div className="w-110 h-50 bg-white shadow-lg hover:shadow-xl rounded-xl transition-all duration-300 p-4 flex flex-col gap-3 border border-gray-100">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex flex-col items-center justify-center shadow-md">
+            <div className="w-11 h-11 bg-linear-to-br from-blue-500 to-blue-600 rounded-lg flex flex-col items-center justify-center shadow-md">
               <Package className="w-4 h-4 text-white mb-0.5" />
               <span className="text-white font-bold text-xs">#1</span>
             </div>

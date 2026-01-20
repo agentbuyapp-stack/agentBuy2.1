@@ -1,3 +1,5 @@
+import { MainComplete } from "./_features/MainComplete";
+
 export default function Home() {
-  return <></>;
+  return <MainComplete />;
 }

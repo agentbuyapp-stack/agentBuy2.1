@@ -27,7 +27,7 @@ const menuItemsSubscription = [
   {
     title: "Нээлттэй захиалга",
     icon: Clipboard,
-    url: "/agent/preOrder",
+    url: "/agent",
   },
   {
     title: "Судалж буй захиалга",
