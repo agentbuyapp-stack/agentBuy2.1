@@ -12,7 +12,7 @@ export const CancelCard = () => {
     setShowDeleteModal(false);
   };
   return (
-    <div className="border border-zinc-200 shadow-xl w-90 h-45 rounded-lg flex flex-col p-4 ">
+    <div className="border border-zinc-200 shadow-xl w-85 h-45 rounded-lg flex flex-col p-4 bg-white">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="relative">

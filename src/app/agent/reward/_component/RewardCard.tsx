@@ -3,7 +3,7 @@ import { Gift, ArrowUpRight, Sparkles, ChevronRight } from "lucide-react";
 
 export const RewardCard = () => {
   return (
-    <div className="border border-zinc-200 shadow-xl w-90 h-45 rounded-lg flex flex-col p-4 bg-white transition-shadow duration-300">
+    <div className="border border-zinc-200 shadow-xl w-85 h-45 rounded-lg flex flex-col p-4 bg-white">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="relative">
@@ -35,13 +35,13 @@ export const RewardCard = () => {
         <span className="text-gray-400 text-xs">Дөнгөж сая</span>
       </div>
 
-      <button className="group relative flex justify-center items-center gap-2 mt-auto py-2.5 rounded-lg bg-linear-to-r from-blue-500 to-blue-500 hover:from-blue-500 hover:to-blue-600 transition-all duration-300 cursor-pointer overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <button className="group relative flex justify-center items-center gap-2 mt-auto py-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden">
+        {/* <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" /> */}
         <Sparkles
           size={16}
-          className="relative z-10 text-white group-hover:rotate-13 transition-transform"
+          className="relative z-10 text-blue-500 group-hover:rotate-13 transition-transform"
         />
-        <span className="relative z-10 text-white text-sm font-semibold">
+        <span className="relative z-10 text-blue-500 text-sm font-semibold">
           Урамшуулал авах
         </span>
       </button>
