@@ -11,7 +11,7 @@ export const CardComplete = () => {
     setSendReport(false);
   };
   return (
-    <div className="border border-zinc-200 shadow-xl w-90 h-45 rounded-lg flex flex-col p-4 ">
+    <div className="border border-zinc-200 shadow-xl w-85 h-45 rounded-lg flex flex-col p-4 bg-white">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="relative">
@@ -40,7 +40,7 @@ export const CardComplete = () => {
           <span>Чат</span>
         </button>
         <button
-          className="py-2 rounded-md text-xs font-semibold flex flex-col bg-green-50 text-green-600 hover:bg-green-100 hover:scale-105 justify-center items-center cursor-pointer"
+          className="py-2 rounded-md text-xs font-semibold flex flex-col bg-blue-50 text-blue-600 hover:bg-blue-100 hover:scale-105 justify-center items-center cursor-pointer"
           onClick={handleSendReport}
         >
           <FileText size={14} />

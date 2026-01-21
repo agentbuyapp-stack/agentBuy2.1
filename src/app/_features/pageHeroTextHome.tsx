@@ -24,7 +24,7 @@ export const HomePageHeroText = () => {
           системд тавтай морил
         </p>
         <p
-          className="text-gray-500 font-medium text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-center px-6 max-w-2xl"
+          className="text-gray-500 font-medium text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-center px-6 max-w-2xl min-[375px]:text-[12px]"
           style={{
             animation: "fade-in 1.5s ease-out",
             letterSpacing: "0.02em",
