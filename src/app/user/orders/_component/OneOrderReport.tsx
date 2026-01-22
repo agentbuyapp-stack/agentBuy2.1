@@ -96,12 +96,18 @@ export const OneOrderReport = (props: Report) => {
             </div>
           </div>
         </div>
-        <div className="p-3 min-[640px]:p-4 bg-gray-50 border-t border-gray-200 shrink-0">
+        <div className="p-3 min-[640px]:p-4 bg-gray-50 border-t border-gray-200 gap-2 flex">
           <button
-            className="w-full py-2 min-[640px]:py-2.5 bg-linear-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-lg font-semibold transition-all text-xs min-[640px]:text-sm shadow-md"
+            className="w-full py-2 min-[640px]:py-2.5 bg-linear-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-lg font-semibold transition-all text-xs min-[640px]:text-sm shadow-md"
             onClick={handleFalseShowReport}
           >
-            Хаах
+            Захиалга цуцлах
+          </button>
+          <button
+            className="w-full py-2 min-[640px]:py-2.5 bg-linear-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-lg font-semibold transition-all text-xs min-[640px]:text-sm shadow-md "
+            onClick={handleFalseShowReport}
+          >
+            Үргэлжлүүлэх
           </button>
         </div>
       </div>
