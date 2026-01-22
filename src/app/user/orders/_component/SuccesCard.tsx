@@ -5,7 +5,7 @@ export const SuccessCard = (props: Success) => {
   const { handleFalseSuccess } = props;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-[320px] min-[640px]:max-w-125 bg-white rounded-2xl shadow-2xl p-6 min-[640px]:p-10 flex flex-col items-center gap-4 min-[640px]:gap-6 animate-in fade-in zoom-in duration-300">
+      <div className="relative w-full max-w-[320px] min-[640px]:max-w-125 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 min-[640px]:p-10 flex flex-col items-center gap-4 min-[640px]:gap-6 animate-in fade-in zoom-in duration-300">
         <div className="relative">
           <div className="absolute inset-0 bg-green-100 rounded-full animate-ping opacity-75"></div>
           <div className="relative bg-linear-to-br from-green-400 to-green-600 rounded-full p-4 min-[640px]:p-6">
@@ -28,7 +28,7 @@ export const SuccessCard = (props: Success) => {
           <h3 className="text-xl min-[640px]:text-2xl font-bold text-gray-800">
             Амжилттай!
           </h3>
-          <p className="text-sm min-[640px]:text-base text-gray-600">
+          <p className="text-sm min-[640px]:text-base text-gray-600 dark:text-white">
             Таны захиалга амжилттай хийгдлээ
           </p>
         </div>
