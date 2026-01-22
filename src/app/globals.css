@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -133,7 +133,8 @@
 }
 
 @keyframes float-1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0px, 0px) rotate(0deg);
   }
   25% {
@@ -148,7 +149,8 @@
 }
 
 @keyframes float-2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0px, 0px) rotate(0deg);
   }
   33% {
@@ -160,7 +162,8 @@
 }
 
 @keyframes float-3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0px, 0px) rotate(0deg);
   }
   25% {
@@ -175,7 +178,8 @@
 }
 
 @keyframes float-4 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0px, 0px) rotate(0deg);
   }
   50% {
@@ -184,7 +188,8 @@
 }
 
 @keyframes float-5 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0px, 0px) rotate(0deg);
   }
   40% {
@@ -196,7 +201,8 @@
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
