@@ -28,17 +28,17 @@ export const AddNewOrder = (props: Add) => {
       setUploading(false);
     }
   };
-  const handleAddOrder = () => {};
+  const handleAddOrder = () => { };
   return (
     <div className="fixed z-10 top-0 left-0 w-screen h-screen flex justify-center items-center bg-[rgba(0,0,0,0.2)] backdrop-blur-sm p-3 min-[640px]:p-4">
-      <div className="w-full max-w-85 min-[640px]:max-w-lg bg-white rounded-xl border shadow-xl flex flex-col justify-center items-center gap-3 min-[640px]:gap-4 p-4 min-[640px]:p-6">
+      <div className="w-full max-w-85 min-[640px]:max-w-lg bg-white dark:bg-gray-800 rounded-xl border shadow-xl flex flex-col justify-center items-center gap-3 min-[640px]:gap-4 p-4 min-[640px]:p-6">
         {/* Header */}
         <div className="w-full flex justify-between items-center">
-          <p className="text-[18px] min-[640px]:text-[22px] text-black font-bold">
+          <p className="text-[18px] min-[640px]:text-[22px] text-black dark:text-white font-bold">
             Шинэ захиалга #1
           </p>
           <button
-            className="w-8 h-8 min-[640px]:w-10 min-[640px]:h-10 flex justify-center items-center rounded-lg bg-gray-100 hover:bg-gray-200 cursor-pointer transition-all duration-200 ease-out hover:scale-105 active:scale-95"
+            className="w-8 h-8 min-[640px]:w-10 min-[640px]:h-10 flex justify-center items-center dark:bg-gray-900 rounded-lg bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 cursor-pointer transition-all duration-200 ease-out hover:scale-105 active:scale-95"
             onClick={handleFalseNewOrder}
           >
             <X className="w-4 h-4 min-[640px]:w-5 min-[640px]:h-5" />
@@ -47,25 +47,25 @@ export const AddNewOrder = (props: Add) => {
 
         {/* Барааны нэр */}
         <div className="w-full flex flex-col gap-1.5 min-[640px]:gap-2">
-          <p className="text-[14px] min-[640px]:text-[16px] text-black font-medium">
+          <p className="text-[14px] min-[640px]:text-[16px] text-black font-medium dark:text-white">
             Барааны нэр
           </p>
           <textarea
             placeholder="Захиалах барааныхаа нэрийг оруулна уу."
-            className="w-full h-14 min-[640px]:h-17 border border-gray-300 rounded-lg text-black text-sm min-[640px]:text-base p-2.5 min-[640px]:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+            className="w-full h-14 min-[640px]:h-17 border border-gray-300 dark:text-white rounded-lg text-black text-sm min-[640px]:text-base p-2.5 min-[640px]:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
             value={newOrderName}
             onChange={(e) => setNewOrderName(e.target.value)}
           />
         </div>
 
         {/* Барааны тайлбар */}
-        <div className="w-full flex flex-col gap-1.5 min-[640px]:gap-2">
-          <p className="text-[14px] min-[640px]:text-[16px] text-black font-medium">
+        <div className="w-full flex flex-col gap-1.5 min-[640px]:gap-2 ">
+          <p className="text-[14px] min-[640px]:text-[16px] text-black font-medium dark:text-white">
             Барааны тайлбар
           </p>
           <textarea
             placeholder="Захиалах бараагаа дэлгэрэнгүй тайлбарлан оруулна уу."
-            className="w-full h-14 min-[640px]:h-17 border border-gray-300 rounded-lg text-black text-sm min-[640px]:text-base p-2.5 min-[640px]:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+            className="w-full h-14 min-[640px]:h-17 border border-gray-300 rounded-lg dark:text-white text-black text-sm min-[640px]:text-base p-2.5 min-[640px]:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
             value={newOrderDescription}
             onChange={(e) => setNewOrderDescription(e.target.value)}
           />
@@ -74,10 +74,10 @@ export const AddNewOrder = (props: Add) => {
         {/* Зураг оруулах */}
         <div className="w-full flex flex-col gap-2 min-[640px]:gap-3">
           <div className="flex items-center gap-2">
-            <p className="text-[14px] min-[640px]:text-[16px] text-black font-medium">
+            <p className="text-[14px] min-[640px]:text-[16px] text-black font-medium dark:text-white">
               Захиалах барааны зураг
             </p>
-            <span className="text-xs min-[640px]:text-sm text-gray-500">
+            <span className="text-xs min-[640px]:text-sm text-gray-500 ">
               ({orderImgs.length}/3)
             </span>
           </div>
