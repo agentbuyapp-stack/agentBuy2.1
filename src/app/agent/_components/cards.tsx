@@ -27,7 +27,7 @@ export const Card = () => {
     setPriceInf(false);
   };
   return (
-    <div className="border border-zinc-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 w-full max-w-[320px] min-[640px]:max-w-85 h-40 rounded-lg min-[640px]:rounded-xl flex flex-col p-3 min-[640px]:p-4 bg-white dark:bg-gray-900 hover:shadow-2xl dark:hover:shadow-gray-900/70 transition-all duration-300">
+    <div className="border border-zinc-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 w-full max-w-[320px] min-[640px]:max-w-85 h-40 min-[640px]:h-45 rounded-lg min-[640px]:rounded-xl flex flex-col p-3 min-[640px]:p-4 bg-white dark:bg-gray-800 hover:shadow-2xl dark:hover:shadow-gray-900/70 transition-all duration-300">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="relative">
@@ -45,7 +45,7 @@ export const Card = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 mt-2">
+      <div className="flex items-center gap-2 mt-2 min-[640px]:mt-3">
         <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full dark:bg-blue-900 dark:text-blue-100 ">
           Шинэ захиалга
         </span>
