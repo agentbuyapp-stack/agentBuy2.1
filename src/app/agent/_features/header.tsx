@@ -1,6 +1,7 @@
 import { UserButton } from "@clerk/nextjs";
 import { User2Icon } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { ThemeToggle } from "@/app/_components/ThemeToggle";
 
 export const Header = () => {
   return (
@@ -16,9 +17,9 @@ export const Header = () => {
         </div>
         <button>
           <UserButton />
-          {/* <User2Icon color="black" /> */}
         </button>
       </div>
+      <ThemeToggle />
     </header>
   );
 };

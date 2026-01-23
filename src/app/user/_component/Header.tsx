@@ -5,7 +5,7 @@ import { useState } from "react";
 export const Header = () => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+    <header className=" top-0 z-40 w-full bg-white/80 dark:bg-gray-800/80 border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-3 min-[640px]:px-2 h-14 min-[640px]:h-16 flex items-center justify-end">
         <div className="flex items-center gap-2 min-[640px]:gap-4">
           <ThemeToggle />

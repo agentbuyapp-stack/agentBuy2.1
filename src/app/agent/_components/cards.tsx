@@ -27,7 +27,7 @@ export const Card = () => {
     setPriceInf(false);
   };
   return (
-    <div className="border border-zinc-200 dark:border-gray-700 shadow-xl w-85 h-45 rounded-lg flex flex-col p-4 gap-2 bg-white dark:bg-gray-900 dark:border-0">
+    <div className="border border-zinc-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 w-full max-w-[320px] min-[640px]:max-w-85 h-40 rounded-lg min-[640px]:rounded-xl flex flex-col p-3 min-[640px]:p-4 bg-white dark:bg-gray-900 hover:shadow-2xl dark:hover:shadow-gray-900/70 transition-all duration-300">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="relative">
@@ -38,12 +38,14 @@ export const Card = () => {
             />
           </div>
           <div>
-            <p className="text-gray-900 font-bold text-lg dark:text-white">Username</p>
+            <p className="text-gray-900 font-bold text-lg dark:text-white">
+              Username
+            </p>
             <p className="text-gray-400 text-xs">Захиалга #12345</p>
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 mt-1">
+      <div className="flex items-center gap-2 mt-2">
         <span className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full dark:bg-blue-900 dark:text-blue-100 ">
           Шинэ захиалга
         </span>
@@ -51,7 +53,8 @@ export const Card = () => {
         <span className="text-gray-400 text-xs">2 цагийн өмнө</span>
       </div>
       <div className="grid grid-cols-2 gap-2 mt-auto">
-        <button className="py-2 rounded-md text-xs font-semibold flex justify-center items-center cursor-pointer gap-1
+        <button
+          className="py-2 rounded-md text-xs font-semibold flex justify-center items-center cursor-pointer gap-1
     bg-purple-50 text-purple-600 hover:bg-purple-100 hover:scale-105
     dark:bg-purple-900 dark:text-purple-300 dark:hover:bg-purple-800"
         >
