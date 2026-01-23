@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { NewOrderBtn } from "./_features/NewOrderBtn";
 import { OrderResult } from "./_component/OrderResult";
-import { AddNewOrder } from "./orders/_component/AddNewOrder";
-import { EditOrder } from "./orders/_component/EditOrder";
-import { DeleteOrder } from "./orders/_component/DeleteOrder";
-import { SuccessCard } from "./orders/_component/SuccesCard";
+import { AddNewOrder } from "./_component/AddNewOrder";
+import { EditOrder } from "./_component/EditOrder";
+import { DeleteOrder } from "./_component/DeleteOrder";
+import { SuccessCard } from "./_component/SuccesCard";
 import { Header } from "./_component/Header";
 
 export default function HomePage() {
@@ -23,9 +23,9 @@ export default function HomePage() {
   const handleFalseSuccess = () => setSuccesOrder(false);
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div className="w-full bg-gray-50 dark:bg-gray-900">
       <Header />
-      <main className="flex-1 flex flex-col items-center pt-6 min-[640px]:pt-10 px-3 min-[640px]:px-4 pb-8">
+      <main className=" flex flex-col items-center pt-6 min-[640px]:pt-10 px-3 min-[640px]:px-4 pb-8">
         <div className="w-full max-w-85 min-[640px]:max-w-5xl bg-white dark:bg-gray-800 rounded-xl min-[640px]:rounded-2xl shadow-lg dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 flex flex-col items-center px-3 min-[640px]:px-6 gap-4 min-[640px]:gap-6 py-4 min-[640px]:py-6 transition-colors duration-300">
           <NewOrderBtn handleAddNewOrder={handleAddNewOrder} />
 
