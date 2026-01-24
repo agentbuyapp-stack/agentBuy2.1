@@ -2,7 +2,7 @@ import { CardComplete } from "../_component/CardComplete";
 
 export const MainComplete = () => {
   return (
-    <div className="w-full h-full flex flex-col gap-5 p-6 dark:bg-gray-800">
+    <div className="w-full h-full flex flex-col gap-5 p-6 dark:bg-gray-900">
       <p className="text-2xl font-bold tracking-tight">
         Төлбөр төлөгдсөн захиалгууд
       </p>

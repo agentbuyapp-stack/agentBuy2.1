@@ -3,7 +3,7 @@ import { Gift, ArrowUpRight, Sparkles, ChevronRight } from "lucide-react";
 
 export const RewardCard = () => {
   return (
-    <div className="border border-zinc-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 w-full max-w-[320px] min-[640px]:max-w-85 h-35 rounded-lg min-[640px]:rounded-xl flex flex-col p-3 min-[640px]:p-4 bg-white dark:bg-gray-900 hover:shadow-2xl dark:hover:shadow-gray-900/70 transition-all duration-300">
+    <div className="border border-zinc-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 w-full max-w-[320px] min-[640px]:max-w-85 h-35 min-[640px]:h-45 rounded-lg min-[640px]:rounded-xl flex flex-col p-3 min-[640px]:p-4 bg-white dark:bg-gray-800 hover:shadow-2xl dark:hover:shadow-gray-900/70 transition-all duration-300">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center gap-2 min-[640px]:gap-3">
           <div className="relative">
@@ -33,7 +33,7 @@ export const RewardCard = () => {
         </div>
       </div>
 
-      <div className="flex items-center gap-1.5 min-[640px]:gap-2 mt-3 min-[640px]:mt-3">
+      <div className="flex items-center gap-1.5 min-[640px]:gap-2 mt-3 min-[640px]:mt-4">
         <span className="px-2 min-[640px]:px-3 py-0.5 min-[640px]:py-1 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] min-[640px]:text-xs font-medium rounded-full">
           Урамшуулал орлоо
         </span>

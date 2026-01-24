@@ -2,7 +2,7 @@ import { RewardCard } from "../_component/RewardCard";
 
 export const MainReward = () => {
   return (
-    <div className="w-full h-full flex flex-col gap-5 p-3 dark:bg-gray-800">
+    <div className="w-full h-full flex flex-col gap-5 p-6 dark:bg-gray-900">
       <p className="text-2xl font-bold tracking-tight min-[375px]:pl-3">
         Захиалгын урамшуулал
       </p>

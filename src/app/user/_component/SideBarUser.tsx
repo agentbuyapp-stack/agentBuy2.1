@@ -38,8 +38,8 @@ export function SideBarUser() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader>
-        <div className="flex items-center gap-2 px-2 py-1 group-data-[collapsible=icon]:justify-center">
+      <SidebarHeader className="min-[640px]:dark:bg-gray-800">
+        <div className="flex items-center gap-2 px-2 py-1 group-data-[collapsible=icon]:justify-center ">
           <button
             onClick={toggleSidebar}
             className="flex size-8 items-center justify-center rounded-lg bg-linear-to-r from-[#0b4ce5] to-[#4a90e2] text-white cursor-pointer hover:scale-105 transition-transform shrink-0"
@@ -53,7 +53,7 @@ export function SideBarUser() {
         </div>
       </SidebarHeader>
 
-      <SidebarContent>
+      <SidebarContent className="min-[640px]:dark:bg-gray-800">
         <SidebarGroup>
           {/* <SidebarGroupLabel>Navigation</SidebarGroupLabel> */}
           <SidebarGroupContent>
@@ -73,8 +73,8 @@ export function SideBarUser() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter>
-        <div className="px-2 py-1 text-xs text-muted-foreground">
+      <SidebarFooter className="min-[640px]:dark:bg-gray-800">
+        <div className="px-2 py-1 text-xs text-muted-foreground ">
           © 2026 Agent Buy
         </div>
       </SidebarFooter>

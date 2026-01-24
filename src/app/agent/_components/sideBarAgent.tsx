@@ -62,7 +62,7 @@ const menuItemsAwardAndOthers = [
 export function SideBarAgent() {
   return (
     <Sidebar className="[--sidebar:theme(colors.white)]">
-      <SidebarHeader className="hidden min-[375px]:block">
+      <SidebarHeader className="hidden min-[375px]:block min-[640px]:dark:bg-gray-800">
         <div className="flex items-center gap-2 px-2 py-1">
           <div className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <span className="text-lg font-bold">A</span>
@@ -75,7 +75,7 @@ export function SideBarAgent() {
           </div>
         </div>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="min-[640px]:dark:bg-gray-800">
         <SidebarGroup>
           <SidebarGroupLabel>Захиалга</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -123,7 +123,7 @@ export function SideBarAgent() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className=" min-[640px]:dark:bg-gray-800">
         <div className="px-2 py-1 text-xs text-muted-foreground">
           © 2026 Agent Buy
         </div>
