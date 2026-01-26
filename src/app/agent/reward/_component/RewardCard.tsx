@@ -1,7 +1,9 @@
 "use client";
 import { Gift, ArrowUpRight, Sparkles, ChevronRight } from "lucide-react";
-
+import { useState } from "react";
+import { RewardModal } from "./RewardModal";
 export const RewardCard = () => {
+  const [getReward, setGetReward] = useState(false);
   return (
     <div className="border border-zinc-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 w-full max-w-[320px] min-[640px]:max-w-85 h-35 min-[640px]:h-45 rounded-lg min-[640px]:rounded-xl flex flex-col p-3 min-[640px]:p-4 bg-white dark:bg-gray-800 hover:shadow-2xl dark:hover:shadow-gray-900/70 transition-all duration-300">
       <div className="relative flex items-center justify-between">
@@ -12,9 +14,6 @@ export const RewardCard = () => {
               src="/alipay.png"
               alt="User"
             />
-            <div className="absolute -bottom-0.5 -right-0.5 min-[640px]:-bottom-1 min-[640px]:-right-1 w-4 h-4 min-[640px]:w-5 min-[640px]:h-5 bg-green-500 dark:bg-green-600 rounded-full flex items-center justify-center border-2 border-white dark:border-gray-800">
-              <ArrowUpRight className="w-2 h-2 min-[640px]:w-2.5 min-[640px]:h-2.5 text-white" />
-            </div>
           </div>
           <div>
             <p className="text-gray-900 dark:text-white font-bold text-sm min-[640px]:text-lg">
@@ -45,12 +44,24 @@ export const RewardCard = () => {
         </span>
       </div>
 
-      <button className="group relative flex justify-center items-center gap-1.5 min-[640px]:gap-2 mt-auto py-2 min-[640px]:py-2.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:scale-[1.02] transition-all duration-300 cursor-pointer overflow-hidden">
+      <button
+        className="group relative flex justify-center items-center gap-1.5 min-[640px]:gap-2 mt-auto py-2 min-[640px]:py-2.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:scale-[1.02] transition-all duration-300 cursor-pointer overflow-hidden"
+        onClick={() => {
+          setGetReward(true);
+        }}
+      >
         <Sparkles className="relative z-10 w-3.5 h-3.5 min-[640px]:w-4 min-[640px]:h-4 text-blue-500 dark:text-blue-400 group-hover:rotate-12 transition-transform" />
         <span className="relative z-10 text-blue-500 dark:text-blue-400 text-xs min-[640px]:text-sm font-semibold">
           Урамшуулал авах
         </span>
       </button>
+      {getReward && (
+        <RewardModal
+          onClose={() => {
+            setGetReward(false);
+          }}
+        />
+      )}
     </div>
   );
 };

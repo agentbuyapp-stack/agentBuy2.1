@@ -11,9 +11,11 @@ import {
 import { useState } from "react";
 import { ShowReport } from "./ShowReport";
 import { ShowDetails } from "./ShowDetails";
+import { ChatBot } from "@/app/_components/ChatBot";
 export const SuccessReport = () => {
   const [showReport, setShowReport] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [chatBot, setChatBot] = useState(false);
   const handleFalseClick = () => {
     setShowReport(false);
   };
@@ -92,7 +94,12 @@ export const SuccessReport = () => {
           <span>Дэлгэрэнгүй</span>
         </button>
 
-        <button className="py-1.5 min-[640px]:py-2 bg-purple-50 dark:bg-purple-900/30 hover:bg-purple-100 dark:hover:bg-purple-900/50 text-purple-600 dark:text-purple-400 rounded-lg text-[10px] min-[640px]:text-xs font-semibold transition-all flex flex-col items-center gap-0.5 min-[640px]:gap-1 hover:scale-105">
+        <button
+          className="py-1.5 min-[640px]:py-2 bg-purple-50 dark:bg-purple-900/30 hover:bg-purple-100 dark:hover:bg-purple-900/50 text-purple-600 dark:text-purple-400 rounded-lg text-[10px] min-[640px]:text-xs font-semibold transition-all flex flex-col items-center gap-0.5 min-[640px]:gap-1 hover:scale-105"
+          onClick={() => {
+            setChatBot(true);
+          }}
+        >
           <MessageCircle className="w-3 h-3 min-[640px]:w-3.5 min-[640px]:h-3.5" />
           <span>Чат</span>
         </button>
@@ -107,6 +114,13 @@ export const SuccessReport = () => {
 
       {showReport && <ShowReport handleFalseClick={handleFalseClick} />}
       {showDetails && <ShowDetails showDetialsClick={handleShowDetialsClick} />}
+      {chatBot && (
+        <ChatBot
+          handleFalseClick={() => {
+            setChatBot(false);
+          }}
+        />
+      )}
     </div>
   );
 };

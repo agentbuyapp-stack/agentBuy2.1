@@ -1,9 +1,13 @@
 import { ShoppingBag, X } from "lucide-react";
+import { useState } from "react";
+import { AddNewOrder } from "../../_component/AddNewOrder";
+import { EditOrder } from "../../_component/EditOrder";
 type ShowDetailsClick = {
   showDetialsClick: () => void;
 };
 export const ShowDetails = (props: ShowDetailsClick) => {
   const { showDetialsClick } = props;
+  const [OneOrderMore, setOneOrderMore] = useState(false);
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 dark:bg-black/70 backdrop-blur-md p-3 min-[640px]:p-4">
       <div className="w-full max-w-85 min-[640px]:max-w-162.5 max-h-[85vh] min-[640px]:max-h-[90vh] bg-white dark:bg-gray-800 rounded-xl min-[640px]:rounded-2xl shadow-2xl dark:shadow-gray-900/50 overflow-hidden flex flex-col animate-in fade-in zoom-in duration-300">
@@ -42,9 +46,14 @@ export const ShowDetails = (props: ShowDetailsClick) => {
                     iPhone 15 Pro Max
                   </h4>
                 </div>
-                <div className="px-1.5 min-[640px]:px-2 py-0.5 min-[640px]:py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-bold rounded text-[10px] min-[640px]:text-xs shrink-0">
-                  2x
-                </div>
+                <button
+                  className="px-1.5 min-[640px]:px-2 py-0.5 min-[640px]:py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-bold rounded text-[10px] min-[640px]:text-xs shrink-0 cursor-pointer"
+                  onClick={() => {
+                    setOneOrderMore(true);
+                  }}
+                >
+                  Дэлгэрэнгүй
+                </button>
               </div>
             </div>
           </div>
@@ -58,6 +67,13 @@ export const ShowDetails = (props: ShowDetailsClick) => {
           </button>
         </div>
       </div>
+      {OneOrderMore && (
+        <EditOrder
+          handleFalseEditOrder={() => {
+            setOneOrderMore(false);
+          }}
+        />
+      )}
     </div>
   );
 };

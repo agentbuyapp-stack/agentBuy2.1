@@ -117,7 +117,7 @@ export default function Page() {
             )}
 
             {activeOrders && (
-              <div className="flex flex-col min-[640px]:flex-row w-full gap-3 min-[640px]:gap-4">
+              <div className="grid grid-cols-2 min-[640px]:flex-row w-full gap-3 min-[640px]:gap-4">
                 <OrdersCard />
                 <SuccessReport />
               </div>
@@ -153,7 +153,11 @@ export default function Page() {
               </div>
             )}
 
-            {succesOrders && <SuccesOrdersCard />}
+            {succesOrders && (
+              <div className="grid grid-cols-2 min-[640px]:flex-row w-full gap-3 min-[640px]:gap-4">
+                <SuccesOrdersCard />
+              </div>
+            )}
           </div>
         )}
       </div>

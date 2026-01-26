@@ -6,7 +6,10 @@ import {
   Eye,
   MoreVertical,
 } from "lucide-react";
+import { useState } from "react";
+import { ShowDetails } from "./ShowDetails";
 export const SuccesOrdersCard = () => {
+  const [showDetails, setShowDetails] = useState(false);
   return (
     <div className="w-full max-w-[320px] min-[640px]:max-w-110 h-auto min-[640px]:h-50 bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 hover:shadow-xl dark:hover:shadow-gray-900/70 rounded-xl transition-all duration-300 p-3 min-[640px]:p-4 flex flex-col gap-2.5 min-[640px]:gap-3 border border-gray-100 dark:border-gray-700">
       <div className="flex items-center justify-between">
@@ -60,9 +63,21 @@ export const SuccesOrdersCard = () => {
           </span>
         </div>
       </div>
-      <button className="w-full py-1.5 min-[640px]:py-2 bg-green-50 dark:bg-green-900/30 hover:bg-green-100 dark:hover:bg-green-900/50 text-green-600 dark:text-green-400 rounded-lg text-[10px] min-[640px]:text-xs font-semibold transition-all mt-auto">
+      <button
+        className="w-full py-1.5 min-[640px]:py-2 bg-green-50 dark:bg-green-900/30 hover:bg-green-100 dark:hover:bg-green-900/50 text-green-600 dark:text-green-400 rounded-lg text-[10px] min-[640px]:text-xs font-semibold transition-all mt-auto"
+        onClick={() => {
+          setShowDetails(true);
+        }}
+      >
         Дэлгэрэнгүй
       </button>
+      {showDetails && (
+        <ShowDetails
+          showDetialsClick={() => {
+            setShowDetails(false);
+          }}
+        />
+      )}
     </div>
   );
 };
