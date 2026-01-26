@@ -13,23 +13,33 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { FolderClosed, FolderPlus, PanelLeftClose } from "lucide-react";
+import { FolderClosed, FolderPlus, Truck, Settings, Gift } from "lucide-react";
 
 const menuItems = [
   {
-    title: "Шинэ захиалга",
+    title: "Агентууд",
     icon: FolderPlus,
     url: "/user",
   },
   {
-    title: "Үүсгэсэн захиалгууд",
+    title: "Захиалгууд",
     icon: FolderClosed,
     url: "/user/orders",
   },
   {
-    title: "Гарах",
-    icon: PanelLeftClose,
-    url: "/",
+    title: "Карго",
+    icon: Truck,
+    url: "/cargo",
+  },
+  {
+    title: "Тохиргоо",
+    icon: Settings,
+    url: "/settings",
+  },
+  {
+    title: "Урамшуулал",
+    icon: Gift,
+    url: "/promotions",
   },
 ];
 

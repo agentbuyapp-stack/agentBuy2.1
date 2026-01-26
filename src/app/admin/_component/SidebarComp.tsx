@@ -35,7 +35,7 @@ export const SideBarAdmin = () => {
         <div className="flex items-center gap-2 px-2 py-1 group-data-[collapsible=icon]:justify-center">
           <button
             onClick={toggleSidebar}
-            className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-r from-[#0b4ce5] to-[#4a90e2] text-white hover:scale-105 transition-transform shrink-0"
+            className="flex size-8 items-center justify-center rounded-lg bg-liner-to-r from-[#0b4ce5] to-[#4a90e2] text-white hover:scale-105 transition-transform shrink-0"
           >
             <span className="text-lg font-bold">A</span>
           </button>
