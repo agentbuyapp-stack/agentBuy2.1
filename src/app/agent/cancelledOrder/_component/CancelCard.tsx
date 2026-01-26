@@ -2,6 +2,7 @@
 import { AlertTriangle, FileText, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 import { DeleteOrder } from "./DeleteOrder";
+import { ChatBot } from "@/app/_components/ChatBot";
 export const CancelCard = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
@@ -11,6 +12,7 @@ export const CancelCard = () => {
   const handleFalseDelete = () => {
     setShowDeleteModal(false);
   };
+  const [chatBot, setChatBot] = useState(false);
   return (
     <div className="border border-zinc-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 w-full max-w-[320px] min-[640px]:max-w-85 h-40 min-[640px]:h-45 rounded-lg min-[640px]:rounded-xl flex flex-col p-3 min-[640px]:p-4 bg-white dark:bg-gray-800 hover:shadow-2xl dark:hover:shadow-gray-900/70 transition-all duration-300">
       <div className="relative flex items-center justify-between">
@@ -65,6 +67,9 @@ export const CancelCard = () => {
           className="py-2 rounded-md text-xs font-semibold flex justify-center items-center cursor-pointer gap-1 transition-all hover:scale-105
       bg-purple-50 text-purple-600 hover:bg-purple-100
       dark:bg-purple-900/50 dark:text-purple-400 dark:hover:bg-purple-800/50"
+          onClick={() => {
+            setChatBot(true);
+          }}
         >
           <MessageCircle size={14} />
           <span>Чат</span>
@@ -80,6 +85,13 @@ export const CancelCard = () => {
         </button>
       </div>
       {showDeleteModal && <DeleteOrder handleFalseDelete={handleFalseDelete} />}
+      {chatBot && (
+        <ChatBot
+          handleFalseClick={() => {
+            setChatBot(false);
+          }}
+        />
+      )}
     </div>
   );
 };
