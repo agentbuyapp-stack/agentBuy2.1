@@ -15,7 +15,7 @@ export const AuthBtn = () => {
         </SignInButton>
       </SignedOut>
       <SignedOut>
-        <SignInButton forceRedirectUrl="/agent/preOrder">
+        <SignInButton forceRedirectUrl="/agent">
           <button className="group relative bg-linear-to-r from-[#4a90e2] to-[#00d4ff] rounded-2xl flex justify-center items-center w-full sm:w-52 h-14 sm:h-16 px-8 py-4 cursor-pointer border-2 border-white/20 shadow-lg shadow-cyan-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-600/50 hover:scale-105 overflow-hidden">
             <div className="absolute inset-0 bg-linear-to-r from-[#00d4ff] to-[#0b4ce5] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative z-10 text-white font-bold text-[18px] sm:text-[20px] tracking-wide">

@@ -1,7 +1,7 @@
 import { SideBarUserUse } from "./_features/SideBarUserUse";
 
 export const metadata = {
-  title: "Agent Dashboard",
+  title: "User Dashboard",
 };
 
 export default function AgentLayout({
