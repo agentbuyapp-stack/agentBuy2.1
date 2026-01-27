@@ -1,15 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Image, LoaderIcon, X } from "lucide-react";
+import { ReloadIcon } from "../_downIcon/ReloadIcon";
 type Add = {
   handleFalseNewOrder: () => void;
+};
+type Station = {
+  newOrderName: string;
+  newOrderDescription: string;
+  newOrderImages: string[];
 };
 export const AddNewOrder = (props: Add) => {
   const { handleFalseNewOrder } = props;
   const [orderImgs, setOrderImgs] = useState<string[]>([]);
   const [uploading, setUploading] = useState(false);
-  const [newOrderName, setNewOrderName] = useState("");
-  const [newOrderDescription, setNewOrderDescription] = useState("");
   const handleOrderImgUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target;
     if (!input.files || input.files.length === 0 || orderImgs.length >= 3)
@@ -28,7 +32,42 @@ export const AddNewOrder = (props: Add) => {
       setUploading(false);
     }
   };
-  const handleAddOrder = () => {};
+  const [loading, setLoading] = useState(false);
+  const [addNewOrder, setAddNewOrder] = useState<Station>({
+    newOrderName: "",
+    newOrderDescription: "",
+    newOrderImages: [],
+  });
+  const handleAddNewOrder = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:3000/api/user-orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          accept: "application/json",
+          Authorization: `Bearer`,
+        },
+        body: JSON.stringify({
+          productName: addNewOrder.newOrderName,
+          description: addNewOrder.newOrderDescription,
+          imageUrls: addNewOrder.newOrderImages,
+        }),
+      });
+      if (res.ok) {
+        setAddNewOrder({
+          newOrderName: "",
+          newOrderDescription: "",
+          newOrderImages: [],
+        });
+        handleFalseNewOrder();
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="fixed z-10 top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/20 dark:bg-black/40 backdrop-blur-sm p-3 min-[640px]:p-4">
       <div className="w-full max-w-85 min-[640px]:max-w-lg bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 flex flex-col justify-center items-center gap-3 min-[640px]:gap-4 p-4 min-[640px]:p-6">
@@ -50,8 +89,10 @@ export const AddNewOrder = (props: Add) => {
           <textarea
             placeholder="Захиалах барааныхаа нэрийг оруулна уу."
             className="w-full h-14 min-[640px]:h-17 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 text-sm min-[640px]:text-base p-2.5 min-[640px]:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all resize-none"
-            value={newOrderName}
-            onChange={(e) => setNewOrderName(e.target.value)}
+            value={addNewOrder.newOrderName}
+            onChange={(e) => {
+              setAddNewOrder({ ...addNewOrder, newOrderName: e.target.value });
+            }}
           />
         </div>
         <div className="w-full flex flex-col gap-1.5 min-[640px]:gap-2">
@@ -61,8 +102,13 @@ export const AddNewOrder = (props: Add) => {
           <textarea
             placeholder="Захиалах бараагаа дэлгэрэнгүй тайлбарлан оруулна уу."
             className="w-full h-14 min-[640px]:h-17 border border-gray-300  dark:border-gray-600 bg-white dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 text-sm min-[640px]:text-base p-2.5 min-[640px]:p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-all resize-none"
-            value={newOrderDescription}
-            onChange={(e) => setNewOrderDescription(e.target.value)}
+            value={addNewOrder.newOrderDescription}
+            onChange={(e) => {
+              setAddNewOrder({
+                ...addNewOrder,
+                newOrderDescription: e.target.value,
+              });
+            }}
           />
         </div>
         <div className="w-full flex flex-col gap-2 min-[640px]:gap-3">
@@ -127,9 +173,10 @@ export const AddNewOrder = (props: Add) => {
         <div className="w-full mt-auto">
           <button
             className="w-full h-9 min-[640px]:h-10 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 dark:from-blue-600 dark:to-blue-700 dark:hover:from-blue-700 dark:hover:to-blue-800 rounded-lg flex justify-center items-center text-white text-[13px] min-[640px]:text-[14px] font-semibold cursor-pointer transition-all duration-200 ease-out hover:scale-105 active:scale-95 shadow-md hover:shadow-lg dark:shadow-blue-900/30"
-            onClick={handleAddOrder}
+            onClick={handleAddNewOrder}
+            disabled={loading}
           >
-            Бараа нэмэх
+            {loading ? <ReloadIcon /> : "Бараа нэмэх"}
           </button>
         </div>
       </div>
