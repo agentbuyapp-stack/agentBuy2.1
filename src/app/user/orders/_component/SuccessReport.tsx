@@ -30,7 +30,7 @@ export const SuccessReport = () => {
     try {
       if (!BACKEND_URL) return;
       const data = await (
-        await fetch(`${BACKEND_URL}/api/user-orders/user/${clerkId}`, {
+        await fetch(` http://localhost:4000/api/user-orders/user/${clerkId}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
