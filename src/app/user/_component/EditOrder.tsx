@@ -1,6 +1,6 @@
 "use client";
 import { Image, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 type Edit = {
   handleFalseEditOrder: () => void;
 };
@@ -29,6 +29,22 @@ export const EditOrder = (props: Edit) => {
       setUploading(false);
     }
   };
+  const [getOrderEdit, setGetOrderEdit] = useState();
+  const getData = async () => {
+    const data = await fetch("http://localhost:3000/api/user-orders", {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: "bearer",
+      },
+    });
+    const jsonData = await data.json();
+    setGetOrderEdit(jsonData);
+    console.log(getOrderEdit, "get");
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div className="fixed z-10 top-0 left-0 w-screen h-screen flex justify-center items-center bg-[rgba(0,0,0,0.2)] backdrop-blur-sm p-3 min-[640px]:p-4">
       <div className="w-full max-w-85 min-[640px]:max-w-lg bg-white dark:bg-gray-800 rounded-xl border shadow-xl flex flex-col justify-center items-center gap-3 min-[640px]:gap-4 p-4 min-[640px]:p-6">

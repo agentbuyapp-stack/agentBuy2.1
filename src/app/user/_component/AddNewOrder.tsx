@@ -60,12 +60,11 @@ export const AddNewOrder = (props: Add) => {
           newOrderDescription: "",
           newOrderImages: [],
         });
+        setLoading(false);
         handleFalseNewOrder();
       }
     } catch (err) {
       console.log(err);
-    } finally {
-      setLoading(false);
     }
   };
   return (
