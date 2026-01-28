@@ -20,10 +20,8 @@ export const AddNewOrder = (props: Add) => {
     const input = e.target;
     if (!input.files || input.files.length === 0 || orderImgs.length >= 3)
       return;
-
     const file = input.files[0];
     setUploading(true);
-
     try {
       const imgUrl = URL.createObjectURL(file);
       setOrderImgs((prev) => [...prev, imgUrl]);
@@ -34,6 +32,7 @@ export const AddNewOrder = (props: Add) => {
       setUploading(false);
     }
   };
+
   const [loading, setLoading] = useState(false);
   const [addNewOrder, setAddNewOrder] = useState<Station>({
     newOrderName: "",
@@ -41,6 +40,7 @@ export const AddNewOrder = (props: Add) => {
     newOrderImages: [],
   });
   const { user } = useUser();
+  console.log("IMAGE URL:", orderImgs);
 
   const handleAddNewOrder = async () => {
     setLoading(true);
@@ -56,7 +56,7 @@ export const AddNewOrder = (props: Add) => {
           clerkId: user?.id,
           productName: addNewOrder.newOrderName,
           description: addNewOrder.newOrderDescription,
-          imageUrls: addNewOrder.newOrderImages,
+          imageUrls: orderImgs,
         }),
       });
       if (res.ok) {

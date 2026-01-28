@@ -8,20 +8,53 @@ import {
   MessageCircle,
   Package,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ShowReport } from "./ShowReport";
 import { ShowDetails } from "./ShowDetails";
 import { ChatBot } from "@/app/_components/ChatBot";
+import { useUser } from "@clerk/nextjs";
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
 export const SuccessReport = () => {
+  const { user } = useUser();
+  console.log("USER:", user);
+
+  const clerkId = user?.id;
   const [showReport, setShowReport] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [chatBot, setChatBot] = useState(false);
+  const [orderData, setOrderData] = useState([]);
+  const fetchData = async () => {
+    if (!clerkId) return;
+    try {
+      if (!BACKEND_URL) return;
+      const data = await (
+        await fetch(`${BACKEND_URL}/api/user-orders/user/${clerkId}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json",
+          },
+        })
+      ).json();
+      setOrderData(data);
+    } catch (err) {
+      console.error("CLIENT ERROR:", err);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  console.log("ORDER DATA:", orderData);
+
   const handleFalseClick = () => {
     setShowReport(false);
   };
   const handleShowDetialsClick = () => {
     setShowDetails(false);
   };
+
   return (
     <div className="w-full max-w-[320px] min-[640px]:max-w-110 bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 hover:shadow-xl dark:hover:shadow-gray-900/70 rounded-xl transition-all duration-300 p-3 min-[640px]:p-4 flex flex-col gap-2.5 min-[640px]:gap-3 border border-gray-100 dark:border-gray-700">
       <div className="flex items-center justify-between">
@@ -64,7 +97,6 @@ export const SuccessReport = () => {
             Судлагдаж...
           </span>
         </div>
-
         <div className="flex-1 h-0.5 min-[640px]:h-1 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
         <div className="flex flex-col items-center gap-0.5 min-[640px]:gap-1 flex-1">
           <div className="w-5 h-5 min-[640px]:w-7 min-[640px]:h-7 bg-gray-300 dark:bg-gray-600 rounded-full flex items-center justify-center">
