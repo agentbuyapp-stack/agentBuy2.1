@@ -1,7 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Image, LoaderIcon, X } from "lucide-react";
+import { useState } from "react";
+import { Image, X } from "lucide-react";
 import { ReloadIcon } from "../_downIcon/ReloadIcon";
+import { useUser } from "@clerk/nextjs";
 type Add = {
   handleFalseNewOrder: () => void;
 };
@@ -10,6 +11,7 @@ type Station = {
   newOrderDescription: string;
   newOrderImages: string[];
 };
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 export const AddNewOrder = (props: Add) => {
   const { handleFalseNewOrder } = props;
   const [orderImgs, setOrderImgs] = useState<string[]>([]);
@@ -38,17 +40,20 @@ export const AddNewOrder = (props: Add) => {
     newOrderDescription: "",
     newOrderImages: [],
   });
+  const { user } = useUser();
+
   const handleAddNewOrder = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/user-orders", {
+      const res = await fetch(`${BACKEND_URL}/api/user-orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           accept: "application/json",
-          Authorization: `Bearer`,
+          // Authorization: `Bearer`,
         },
         body: JSON.stringify({
+          clerkId: user?.id,
           productName: addNewOrder.newOrderName,
           description: addNewOrder.newOrderDescription,
           imageUrls: addNewOrder.newOrderImages,
@@ -67,6 +72,7 @@ export const AddNewOrder = (props: Add) => {
       console.log(err);
     }
   };
+
   return (
     <div className="fixed z-10 top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/20 dark:bg-black/40 backdrop-blur-sm p-3 min-[640px]:p-4">
       <div className="w-full max-w-85 min-[640px]:max-w-lg bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 flex flex-col justify-center items-center gap-3 min-[640px]:gap-4 p-4 min-[640px]:p-6">
