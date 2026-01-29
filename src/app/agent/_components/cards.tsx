@@ -15,17 +15,17 @@ type MyProps = {
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export const Card = ({ data }: MyProps) => {
-  console.log("data:", data);
+  // console.log("data:", data);
 
-  const createChatRoom = async () => {
-    try {
-      await fetch(`${BACKEND_URL}/chat/createChatRoom`, {
-        
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const createChatRoom = async () => {
+  //   try {
+  //     await fetch(`${BACKEND_URL}/chat/createChatRoom`, {
+
+  //     });
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   const [sendReport, setSendReport] = useState(false);
   const handleSendReport = () => {
