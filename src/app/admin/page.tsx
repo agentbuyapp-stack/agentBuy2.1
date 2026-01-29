@@ -1,3 +1,8 @@
-export default function Home() {
-  return <></>;
+export default function AdminHome() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+      <p className="text-muted-foreground mt-2">Тавтай морилно уу!</p>
+    </div>
+  );
 }
