@@ -1,9 +1,11 @@
 "use client";
 import { ThemeToggle } from "@/app/_components/ThemeToggle";
+import { SidebarHeader, useSidebar } from "@/components/ui/sidebar";
 import { Bell, ChevronDown, LogOut, Settings, User } from "lucide-react";
 import { useState } from "react";
 export const Header = () => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const { toggleSidebar, isMobile } = useSidebar();
   return (
     <header className=" top-0 z-40 w-full bg-white/80 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-3 min-[640px]:px-2 h-14 min-[640px]:h-16 flex items-center justify-end">

@@ -3,10 +3,10 @@ import { SideBarUser } from "../_component/SideBarUser";
 
 export const SideBarUserUse = () => {
   return (
-    <SidebarProvider >
+    <SidebarProvider>
       <div className="flex">
         <SideBarUser />
-        <div className="flex-1 flex flex-col " >
+        <div className="flex-1 flex flex-col ">
           <div className="md:hidden p-2">
             <SidebarTrigger />
           </div>
