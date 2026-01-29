@@ -5,7 +5,28 @@ import { PriceInf } from "./PriceInf";
 import { ShowReportAgent } from "./ShowReportAgent";
 import { OrderMoreReport } from "./OrderMoreReport";
 import { ChatBot } from "@/app/_components/ChatBot";
-export const Card = () => {
+
+type MyProps = {
+  data: {
+    _id: string;
+  };
+};
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
+export const Card = ({ data }: MyProps) => {
+  console.log("data:", data);
+
+  const createChatRoom = async () => {
+    try {
+      await fetch(`${BACKEND_URL}/chat/createChatRoom`, {
+        
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const [sendReport, setSendReport] = useState(false);
   const handleSendReport = () => {
     setSendReport(!sendReport);
@@ -54,6 +75,7 @@ export const Card = () => {
         <span className="text-gray-300 text-xs">•</span>
         <span className="text-gray-400 text-xs">2 цагийн өмнө</span>
       </div>
+
       <div className="grid grid-cols-2 gap-2 mt-auto">
         <button
           className="py-2 rounded-md text-xs font-semibold flex justify-center items-center cursor-pointer gap-1
@@ -66,6 +88,7 @@ export const Card = () => {
           <MessageCircle size={14} />
           <span>Чат</span>
         </button>
+
         <button
           className="py-2 rounded-md text-xs font-semibold flex flex-col justify-center items-center cursor-pointer
       bg-blue-50 text-blue-600 hover:bg-blue-100 hover:scale-105
