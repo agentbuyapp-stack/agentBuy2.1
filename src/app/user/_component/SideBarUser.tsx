@@ -48,7 +48,6 @@ export function SideBarUser() {
           </button>
           <div className="flex flex-col overflow-hidden group-data-[collapsible=icon]:hidden">
             <span className="text-sm font-semibold">Agent Buy</span>
-            {/* <span className="text-xs text-muted-foreground">Dashboard</span> */}
           </div>
         </div>
       </SidebarHeader>

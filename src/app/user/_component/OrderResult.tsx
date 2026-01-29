@@ -24,7 +24,7 @@ export const OrderResult = (props: Click) => {
     getData;
   }, []);
   return (
-    <div className="h-16 min-[640px]:h-20 w-full max-w-85 min-[640px]:max-w-4xl bg-white dark:bg-gray-900/50 rounded-lg min-[640px]:rounded-xl shadow-md dark:shadow-gray-900/50 hover:shadow-xl dark:hover:shadow-gray-900/70 transition-all duration-300 flex justify-between px-3 min-[640px]:px-6 py-3 min-[640px]:py-4 items-center border border-gray-100 dark:border-gray-700 group hover:border-blue-200 dark:hover:border-blue-600">
+    <div className="h-16 min-[640px]:h-20 w-full max-w-85 min-[640px]:max-w-4xl bg-white dark:bg-gray-900/50 rounded-lg min-[640px]:rounded-xl shadow-md dark:shadow-gray-900/50 hover:shadow-xl dark:hover:shadow-gray-900/70 transition-all duration-300 flex justify-between px-3 min-[640px]:px-6 py-3 min-[640px]:py-4 items-center border border-gray-100 dark:border-gray-600 group hover:border-blue-200 dark:hover:border-blue-600">
       <div className="flex items-center gap-2 min-[640px]:gap-4">
         <div className="relative">
           <div className="w-10 h-10 min-[640px]:w-14 min-[640px]:h-14 bg-linear-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-lg min-[640px]:rounded-xl flex items-center justify-center shadow-lg dark:shadow-blue-900/30 group-hover:scale-105 transition-transform duration-300">

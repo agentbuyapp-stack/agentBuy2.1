@@ -56,7 +56,7 @@ export const SuccessReport = () => {
   };
 
   return (
-    <div className="w-full max-w-[320px] min-[640px]:max-w-110 bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 hover:shadow-xl dark:hover:shadow-gray-900/70 rounded-xl transition-all duration-300 p-3 min-[640px]:p-4 flex flex-col gap-2.5 min-[640px]:gap-3 border border-gray-100 dark:border-gray-700">
+    <div className="w-full max-w-[320px] min-[640px]:max-w-110 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-900/50 hover:shadow-xl dark:hover:shadow-gray-900/70 rounded-xl transition-all duration-300 p-3 min-[640px]:p-4 flex flex-col gap-2.5 min-[640px]:gap-3 border border-gray-100 dark:border-gray-600">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-9 h-9 min-[640px]:w-11 min-[640px]:h-11 bg-linear-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-lg flex flex-col items-center justify-center shadow-md dark:shadow-blue-900/30">
